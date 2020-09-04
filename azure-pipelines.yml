@@ -24,8 +24,8 @@ steps:
 
 - task: Npm@1
   displayName: 'Run npm install'
-    inputs:
-      verbose: false
+  inputs:
+    verbose: false
 
 - script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
   displayName: 'Compile Saas assets'
@@ -59,6 +59,6 @@ steps:
     publishWebProjects: false
     zipAfterPublish: true
 
-  - task: PublishBuildArtifacts@1
-    displayName: 'Publish Artifact: drop'
-    condition: succeeded()
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
